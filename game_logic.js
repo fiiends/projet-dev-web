@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (options === RéponseJuste) {
                 displayMessage("Bonne réponse !", "success");                               
                 setTimeout(() => {
-                    applyDamage(difficulty === "easy" ? 10 : difficulty === "medium" ? 20 : 30);
+                    applyDamage(difficulty === "facile" ? 5 : difficulty === "moyen" ? 10 : difficulty === "difficile" ? 20 : 30);
                   }, 2000);
             } else {
                 displayMessage("Mauvaise réponse...", "error");
