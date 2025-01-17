@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duel en cours !</title>
+    <link rel="stylesheet" href="versus.css">
+    <script defer src="game_logic.js"></script>
+    <script src="Questions.js"></script>
+</head>
+<body>
+    <a><img src="icons/house.png" alt="house" class="house-image" onclick="Redirect_Home()"></a>
+    <a><img src="icons/arrow-back.png" alt="arrow to get back" class="arrow-image" onclick="Redirect_VS()"></a>
+
+    <div class="sound-icons">
+        <img id="imgmusique" class="size-sound-icon" src="icons/music-icon.png" alt="music icon"/>
+        <img id="imgsons" class="size-sound-icon" src="icons/speaker.png" alt="speaker icon"/>
+    </div>
+    <div class="sound-cursors">
+        <button id="button_play_music" class="button_play"><img id="imgplaymusique" class="play" src="icons/play.png" ></button>
+        <input id="music" type="range" min="0.00" max="1" step="0.01" oninput="volume_music = this.value"/>
+        <input id="sounds" type="range" min="0.00" max="1" step="0.01" oninput="volume_sounds = this.value"/>
+    </div>
+
+
+
+    <div id="game-intro">
+        <div class="intro-banner">
+            <p>C'EST PARTI !</p>
+        </div>
+    </div>
+
+    <div id="game-end" class="fade-in-out" style="display: none;">
+        <div class="end-banner">
+            <p id="winner-message"></p>
+        </div>
+    </div>
+
+    <div id="result" style="display: none;"></div>
+
+    <div id="message-box"></div>
+
+    <main>
+        <h1 id="Combat-Title">FIGHT !</h1>
+        <div class="game-container">
+            <!-- Zone Joueur 1 -->
+            <div class="player-area">
+                <h2 id="player1-name">Joueur 1</h2>
+                <div class="health-bar">
+                    <div id="player1-health" class="health-bar-fill"></div>
+                </div>
+                <p id="player1-hp">100 PV</p>
+                <button onclick="sound_button_click.play()" id="player1-bonus" class="bonus-btn">DOUBLE DÉGÂTS</button>
+            </div>
+
+            <!-- Zone centrale -->
+            <div id="current-action">
+                <canvas id="wheel"></canvas>
+                <button id="spin-btn">SPIN</button>
+                <p id="current-theme">Tirez un thème aléatoire !</p>
+                <div id="difficulty-choice" style="display: none;">
+                    <button class="difficulty-btn" data-difficulty="facile" onclick="sound_button_click.play()">Facile</button>
+                    <button class="difficulty-btn" data-difficulty="moyen" onclick="sound_button_click.play()">Moyen</button>
+                    <button class="difficulty-btn" data-difficulty="difficile" onclick="sound_button_click.play()">Difficile</button>
+                    <button class="difficulty-btn" data-difficulty="extreme" onclick="sound_button_click.play()">Extrême</button>
+                </div>
+                <div id="question-area" style="display: none;">
+                    <p id="question-text"></p>
+                    <div id="answers">
+                        <!-- Réponses générées dynamiquement -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Zone Joueur 2 -->
+            <div class="player-area">
+                <h2 id="player2-name">Joueur 2</h2>
+                <div class="health-bar">
+                    <div id="player2-health" class="health-bar-fill"></div>
+                </div>
+                <p id="player2-hp">100 PV</p>
+                <button onclick="sound_button_click.play()" id="player2-bonus" class="bonus-btn">DOUBLE DÉGÂTS</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

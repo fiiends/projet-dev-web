@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="train.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./Questions.js"></script>
+    <script src="./entrainement.js" defer></script>    
+</head>
+<body>
+    <div class="sound-icons">
+        <img id="imgmusique" class="size-sound-icon" src="icons/music-icon.png" alt="music icon"/>
+        <img id="imgsons" class="size-sound-icon" src="icons/speaker.png" alt="speaker icon"/>
+    </div>
+    <div class="sound-cursors">
+        <button id="button_play_music" class="button_play"><img id="imgplaymusique" class="play" src="icons/play.png" ></button>
+        <input id="music" type="range" min="0.00" max="1" step="0.01" oninput="volume_music = this.value"/>
+        <input id="sounds" type="range" min="0.00" max="1" step="0.01" oninput="volume_sounds = this.value"/>
+    </div>
+    <a><img src='icons/house.png'alt='house' class='house-image' onclick="Redirect_Home()"></a>
+    <a><img src='icons/arrow-back.png' alt='arrow to get back' id="arrow-image" class='arrow-image' onclick="sound_button_click.play()"></a>
+    <div id="quiz-container"></div>
+    <div id="result" class="hidden"></div>
+    <div id="bouttons"></div>
+    <div id="nbquestions" class="info" ></div> 
+</body>
+</html>

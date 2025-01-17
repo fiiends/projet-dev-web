@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="versus.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClashVersus</title>
+    <script defer src="script_pres_vs.js"></script>
+</head>
+<div class="sound-icons">
+    <img id="imgmusique" class="size-sound-icon" src="icons/music-icon.png" alt="music icon"/>
+    <img id="imgsons" class="size-sound-icon" src="icons/speaker.png" alt="speaker icon"/>
+</div>
+<div class="sound-cursors">
+    <button id="button_play_music" class="button_play"><img id="imgplaymusique" class="play" src="icons/play.png" ></button>
+    <input id="music" type="range" min="0.00" max="1" step="0.01" oninput="volume_music = this.value"/>
+    <input id="sounds" type="range" min="0.00" max="1" step="0.01" oninput="volume_sounds = this.value"/>
+</div>
+<body>
+    <a><img src="icons/house.png" alt="house" class="house-image" onclick="Redirect_Home()"></a>
+    
+    <main>
+        <div class="logo-container">
+            <img src="icons/logo_versus.png" alt="Logo Versus" class="logo">
+        </div>        
+
+        <div class="player-input">
+            <div class="player">
+                <label for="player1">Joueur 1 :</label>
+                <input type="text" id="player1" placeholder="Entrez le pseudo">
+                <button onclick="sound_button_click.play()" id="validate1">Valider</button>
+            </div>
+            <div class="player">
+                <label for="player2">Joueur 2 :</label>
+                <input type="text" id="player2" placeholder="Entrez le pseudo">
+                <button onclick="sound_button_click.play()" id="validate2">Valider</button>
+            </div>
+        </div>
+
+        <button onclick="Redirect_Game()" id="startGame" disabled>Commencer</button>
+    </main>
+</body>
+
+</html>
